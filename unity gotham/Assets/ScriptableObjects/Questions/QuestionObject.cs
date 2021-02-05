@@ -6,7 +6,7 @@ using UnityEngine;
 public class QuestionObject : ScriptableObject
 {
     [TextArea(1, 5)]
-    [SerializeField] string m_Question;
+   public  string m_Question;
 
-    AnswerObject[] m_AnswerObjects;
+    public AnswerObject[] m_AnswerObjects;
 }

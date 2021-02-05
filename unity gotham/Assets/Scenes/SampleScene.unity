@@ -1081,9 +1081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Questions:
-  - Who is the first character shown in the pilot episode?
-  - On whose orders is Gordon forced to take Oswald Cobblepot, also known as the
-    Penguin, out to the pier and kill him?
+  - {fileID: 11400000, guid: ccfe5c83e9728b845862e075ea38b1a6, type: 2}
   m_QuestionText: {fileID: 1187505207}
 --- !u!4 &1358539157
 Transform:
