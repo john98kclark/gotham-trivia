@@ -1083,6 +1083,10 @@ MonoBehaviour:
   m_Questions:
   - {fileID: 11400000, guid: ccfe5c83e9728b845862e075ea38b1a6, type: 2}
   m_QuestionText: {fileID: 1187505207}
+  m_answerstext:
+  - {fileID: 2101089171}
+  - {fileID: 561889852}
+  - {fileID: 611991992}
 --- !u!4 &1358539157
 Transform:
   m_ObjectHideFlags: 0
