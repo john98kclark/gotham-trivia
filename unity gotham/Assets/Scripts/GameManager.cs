@@ -8,16 +8,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] QuestionObject[] m_Questions;
 
     [SerializeField] Text m_QuestionText;
-    [SerializeField] Text[] m_answerstext;
+
+
+    [SerializeField] AnswerButton[] m_AnswerButtons;
 
     // Start is called before the first frame update
     void Start()
     {
         //Setting the current question from our m_Questions array to the m_QuestionsText component in the scene.
         m_QuestionText.text = m_Questions[m_CurrentQuestion].m_Question;
-        for (int i = 0; i < m_answerstext.Length; i++) 
+        for (int i = 0; i < m_AnswerButtons.Length; i++) 
         {
-            m_answerstext[i].text = m_Questions[m_CurrentQuestion].m_AnswerObjects[i].m_Answer;
+            m_AnswerButtons[i].Initialized(m_Questions[m_CurrentQuestion].m_AnswerObjects[i]);
            
         }
         Debug.Log("Hello Gotham");
