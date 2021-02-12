@@ -6,14 +6,12 @@ using UnityEngine;
 public class AnswerObject : ScriptableObject
 {
 
-    #region Internal Fields
+    
 
-    [SerializeField] private string m_Answer;
 
-    #endregion
 
     #region SerializeField
-
+    [SerializeField] private string m_Answer;
     [SerializeField] bool m_IsCorrect;
 
     #endregion
@@ -32,7 +30,7 @@ public class AnswerObject : ScriptableObject
             return m_Answer;
         }
     }
-
+    public bool IsCorrect { get { return m_IsCorrect; } }
     #endregion
 
 }

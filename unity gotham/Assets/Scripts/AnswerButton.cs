@@ -23,9 +23,21 @@ public class AnswerButton : MonoBehaviour
 
     public void Initialized(AnswerObject answerObject)
     {
+        m_AnswerObject = answerObject;
         m_AnswerText.text = answerObject.Answer;
     }
 
     #endregion
+    #region public methods  
+    public void AnswerClicked() {
+        if (m_AnswerObject.IsCorrect)
+        {
+            Debug.Log("Correct");
+        }
+        else {
+            Debug.Log("Wrong");
+        }  
+    }
 
+    #endregion
 }
