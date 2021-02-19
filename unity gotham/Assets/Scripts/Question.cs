@@ -10,6 +10,8 @@ public class Question : MonoBehaviour
 	[SerializeField] Text m_QuestionText;
 
 	[SerializeField] AnswerButton[] m_AnswerButtons;
+
+	[SerializeField] Image m_BackgroundImage;
 	
 	#endregion
 
@@ -18,7 +20,7 @@ public class Question : MonoBehaviour
 
 	public void Initialize(QuestionData questionData) {
 		m_QuestionText.text = questionData.QuestionMessage;
-		
+		m_BackgroundImage.sprite = questionData.BackgroundImage;
 		for (int i = 0; i < m_AnswerButtons.Length; i++) 
 		{
 			m_AnswerButtons[i].Initialized(questionData.AnswersData[i]);
