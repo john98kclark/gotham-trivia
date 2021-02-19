@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da63762d860a34e4ea3cfb5e3e1af299, type: 3}
   m_Name: Q0_A0
   m_EditorClassIdentifier: 
-  m_Answer: Answer 0
+  m_Answer: Jack Napier
   m_IsCorrect: 1
