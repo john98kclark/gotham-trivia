@@ -1037,6 +1037,7 @@ MonoBehaviour:
   - {fileID: 1185162968}
   - {fileID: 119713223}
   - {fileID: 644839880}
+  m_BackgroundImage: {fileID: 278900110}
 --- !u!1 &1185162963
 GameObject:
   m_ObjectHideFlags: 0
