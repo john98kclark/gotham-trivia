@@ -9,13 +9,23 @@ public class GameManager : MonoBehaviour {
 
 	[SerializeField]
 	private QuestionData[] m_QuestionsData;
-
+	private int m_CurrentQuestion = 0;
 
 	#region MonoBehaviour Methods
 
 	private void Start() {
-		m_Questions.Initialize(m_QuestionsData[0]);
+		AnswerButton.OnAnswered=GoToNextQuestion;
+		m_Questions.Initialize(m_QuestionsData[m_CurrentQuestion]);
+	}
+    #endregion
+    #region
+    private void GoToNextQuestion()
+    {
+		m_CurrentQuestion++;
+		m_Questions.Initialize(m_QuestionsData[m_CurrentQuestion]);
 	}
 
-	#endregion
+
+
+    #endregion
 }

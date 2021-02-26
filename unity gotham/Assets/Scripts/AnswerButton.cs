@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using System;
 [RequireComponent(typeof(Image))]
 public class AnswerButton : MonoBehaviour {
 	#region SerializeFields
@@ -28,6 +28,9 @@ public class AnswerButton : MonoBehaviour {
 
 	#endregion
 
+	#region action 
+	public static System.Action OnAnswered;
+    #endregion
 
 	#region Public Methods/Functions
 
@@ -42,7 +45,8 @@ public class AnswerButton : MonoBehaviour {
 	#region MonoBehaviour Methods
 
 	private void Awake() {
-		m_Image = GetComponent<Image>();
+		
+			m_Image = GetComponent<Image>();
 	}
 
 	#endregion
@@ -51,6 +55,7 @@ public class AnswerButton : MonoBehaviour {
 	#region public methods
 
 	public void AnswerClicked() {
+		OnAnswered.Invoke();
 		if (_mAnswerData.IsCorrect) {
 			Debug.Log("Correct");
 			ApplingCheckMark();

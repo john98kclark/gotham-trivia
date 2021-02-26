@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class Question : MonoBehaviour
 {
 	#region SerializeFields
 
-	[SerializeField] Text m_QuestionText;
+	[SerializeField] TextMeshProUGUI m_QuestionText;
 
 	[SerializeField] AnswerButton[] m_AnswerButtons;
 
