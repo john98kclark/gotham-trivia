@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ade230f2af3a244965639635b18ae8, type: 3}
   m_Name: Q1
   m_EditorClassIdentifier: 
-  m_QuestionMessage: 
+  m_QuestionMessage: question 2
   m_BackgroundImage: {fileID: 0}
-  m_AnswersData: []
+  m_AnswersData:
+  - {fileID: 11400000, guid: 278c57b12ba5e5e41b59715e5985cecc, type: 2}
+  - {fileID: 11400000, guid: e5a2216de2705fd4295e7b4699f7a221, type: 2}
+  - {fileID: 11400000, guid: 6a63d741294d7084c85edbac580cac06, type: 2}
