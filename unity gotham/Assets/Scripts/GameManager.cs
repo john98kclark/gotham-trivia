@@ -9,16 +9,23 @@ public class GameManager : MonoBehaviour
     Question m_Questions;
 
     [SerializeField]
-    private QuestionData[] m_QuestionsData;
+    private List<QuestionData> m_QuestionsData;
 
     private int m_CurrentQuestion = 0; //m_CurrentQuestion = index = element
     private IEnumerator m_GoToNextQuestionCoroutine;
 
     #region properties
 
+    private int CurrentQuestion
+    {
+        get => m_CurrentQuestion + 1;
+    }
     private bool IsThereANextQuestion
     {
-        get { return m_CurrentQuestion < m_QuestionsData.Length - 1; }
+        get
+        {
+            return CurrentQuestion < m_QuestionsData.Count;
+        }
     }
 
     #endregion
