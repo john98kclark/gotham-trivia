@@ -26,6 +26,6 @@ public class Question : MonoBehaviour
 			m_AnswerButtons[i].Initialized(questionData.AnswersData[i]);
 		}
 	}
-
+	//?Putting components in the question data?
 	#endregion
 }

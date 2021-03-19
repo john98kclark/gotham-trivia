@@ -43,7 +43,7 @@ public class AnswerButton : MonoBehaviour
         m_Button.enabled = true;
         m_Image.sprite = null;
     }
-
+    //!Enables and disables button.
     #endregion
 
 
