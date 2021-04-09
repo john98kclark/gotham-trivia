@@ -16,6 +16,9 @@ public class QuestionData : ScriptableObject {
 	[SerializeField]
 	private AnswerData[] m_AnswersData;
 
+	[SerializeField]
+	private int m_Points = 100;
+
 	#endregion
 
 
@@ -34,6 +37,6 @@ public class QuestionData : ScriptableObject {
 	public AnswerData[] AnswersData {
 		get { return m_AnswersData; }
 	}
-
+	public int Points => m_Points;
 	#endregion
 }

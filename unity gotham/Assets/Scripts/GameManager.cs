@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     {
         get
         {
-            return CurrentQuestion < m_QuestionsData.Count;
+            return CurrentQuestion <= m_QuestionsData.Count;
         }
     }
 
@@ -35,19 +35,21 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-
+        DontDestroyOnLoad(this);
         AnswerButton.OnAnswered = GoToNextQuestion;
         m_Questions.Initialize(m_QuestionsData[m_CurrentQuestion]);
+        Debug.Log(m_QuestionsData[m_CurrentQuestion].Points);
     }
 
+   
     #endregion
-
+    
 
     #region
 
     private void GoToNextQuestion()
     {
-        if (IsThereANextQuestion && m_GoToNextQuestionCoroutine == null)
+        if (m_GoToNextQuestionCoroutine == null)
         {
             m_GoToNextQuestionCoroutine = GoToNextQuestionCoroutine();
             StartCoroutine(m_GoToNextQuestionCoroutine);
@@ -56,9 +58,18 @@ public class GameManager : MonoBehaviour
     private IEnumerator GoToNextQuestionCoroutine()
     {
         //A function that can yield when others cant
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(1);
         m_CurrentQuestion++;
-        m_Questions.Initialize(m_QuestionsData[m_CurrentQuestion]);
+        if (IsThereANextQuestion)
+        {
+            Debug.Log(m_QuestionsData[m_CurrentQuestion].Points);
+            m_Questions.Initialize(m_QuestionsData[m_CurrentQuestion]);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+
         m_GoToNextQuestionCoroutine = null;
     }
 
